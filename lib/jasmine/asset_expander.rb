@@ -13,8 +13,7 @@ module Jasmine
     UnsupportedRailsVersion = Class.new(StandardError)
 
     def asset_bundle
-      return Rails3AssetBundle.new if Jasmine::Dependencies.rails3?
-      return Rails4AssetBundle.new if Jasmine::Dependencies.rails4?
+      return Rails4AssetBundle.new
       raise UnsupportedRailsVersion, "Jasmine only supports the asset pipeline for Rails 3 or 4"
     end
 
